@@ -1,31 +1,77 @@
 ---
+const pageTitle = "Sobre mi";
 
+const identidad = {
+  nombre: "Pablo",
+  pais: "Argentina",
+  ocupacion: "Paseador de perros",
+  hobbies: ["fotografia", "video", "dibujo"],
+};
+
+const skills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Astro",
+  "Redacción de documentos",
+];
+
+const feliz = true;
+const finalizado = false;
+const goles = 3;
 ---
 
 <html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Sobre mi</title>
-	</head>
-	<body>
-        <a href="/">Inicio</a>
-        <a href="/about/">Sobre mi</a>
-        <a href="/blog/">Blog</a>
-		
-        <h1>Sobre mi</h1>
-        
-        <h2>...y mi web Astro</h2>
-        
-        <p>Estoy trabajando en el tutorial introductorio de Astro. 
-        Esta es la segunda página de mi sitio web, ¡y es la primera 
-        que he construido yo mismo!</p>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a href="/">Inicio</a>
+    <a href="/about/">Sobre mi</a>
+    <a href="/blog/">Blog</a>
 
-        <p>Este sitio se irá actualizando a medida que vaya completando 
-        más partes del tutorial, ¡así que no dejes de visitarlo para ver 
-        cómo va mi viaje!</p>
+    <h1>{pageTitle}</h1>
 
-	</body>
+    <h2>...y mi web Astro</h2>
+
+    <p>
+      Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda
+      página de mi sitio web, ¡y es la primera que he construido yo mismo!
+    </p>
+
+    <p>
+      Este sitio se irá actualizando a medida que vaya completando más partes
+      del tutorial, ¡así que no dejes de visitarlo para ver cómo va mi viaje!
+    </p>
+
+    <p>He aquí algunos datos sobre mí:</p>
+    <ul>
+      <li>Me llamo {identidad.nombre}.</li>
+      <li>Vivo en {identidad.pais} y trabajo como {identidad.ocupacion}.</li>
+      {
+        identidad.hobbies.length >= 2 && (
+          <li>
+            Dos de mis aficiones son: {identidad.hobbies[1]} y{" "}
+            {identidad.hobbies[2]}
+          </li>
+        )
+      }
+    </ul>
+    <p>Mis habilidades son:</p>
+    <ul>
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+
+    {feliz && <p>¡Estoy feliz de aprender Astro!</p>}
+
+    {finalizado && <p>¡He terminado este tutorial!</p>}
+
+    {goles === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
+
+  </body>
 </html>
