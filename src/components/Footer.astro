@@ -1,0 +1,61 @@
+---
+/* const platformGit = "github.com";
+const usernameGit = "pol1801"; */
+/* const platform = "behance";
+const username = "gallery/51375685/Motion-Graphics#"; */
+
+/* const socialLinks = [
+    {platform: "github.com", username: "pol1801"},
+    {platform: "behance.net", username: "gallery/51375685/Motion-Graphics#"},
+]; */
+
+import Social from "./Social.astro";
+---
+
+<style>
+  footer {
+    font-size: 1.2rem;
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+</style>
+
+<footer>
+  <div>
+    <p>¡Más información sobre mis proyectos en:</p>
+    <div>
+      <Social 
+        platform="github.com" 
+        username="pol1801" />
+      <Social
+        platform="behance.net"
+        username="gallery/51375685/Motion-Graphics#"/>
+      <!-- <ul>
+        <li>
+        </li>
+        <li>
+        </li>
+      </ul> -->
+      <!-- <a target="_blank" href={`https://www.${platformGit}/${usernameGit}`}>{platformGit}</a>!</p> -->
+      <!-- <ul>
+      {
+        socialLinks.map(({ platform, username }) => (
+          <li>
+            <a 
+              href={`https://${platform}/${username}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {platform.charAt(0).toUpperCase() + platform.slice(1)}
+            </a>
+          </li>
+        ))
+      }
+    </ul> -->
+  
+      <!-- <Social platform="github.com" username="pol1801" />
+      <Social platform="behance.net" username="gallery/51375685/Motion-Graphics#" /> -->
+    </div>
+  </div>
+</footer>

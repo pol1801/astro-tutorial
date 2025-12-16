@@ -1,0 +1,21 @@
+---
+const { platform, username } = Astro.props;
+---
+<a 
+target="_blank" 
+href={`https://www.${platform}/${username}`}>
+{platform.charAt(0).toUpperCase() + platform.slice(1)}
+</a>
+
+<style>
+  a {
+    padding: 0.5rem 0.5rem;
+    margin: 0.5rem 0.5rem;
+    color: white;
+    background-color:darkolivegreen;
+    text-decoration: none;
+  }
+  a:hover {
+    background-color: burlywood;
+  }
+</style>

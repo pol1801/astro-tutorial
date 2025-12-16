@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #f1f5f9;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80ch;
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+
+h1 {
+  margin: 1rem 0;
+  color: rgb(65, 60, 60);
+  font-size: 2.5rem;
+}
+
+h2 {
+  margin: 1rem 0;
+  color: rgb(65, 60, 60);
+  font-size: 1.5rem;
+}
+
+.header {
+  position: relative;
+}
+
+
+/* ESTILOS BASE DEL BOTÓN (oculto por defecto) */
+.menu {
+  background-color: #363377;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: none; /* Oculto en desktop */
+  margin: 10px;
+  position: relative;
+  z-index: 1001;
+}
+
+/* NAVEGACIÓN EN MÓVILES (oculta por defecto) */
+.nav-links {
+  width: 100%;
+  margin: 0;
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  display: flex; /* Usamos flex para centrar */
+  flex-direction: column;
+  align-items:center;
+  z-index: 1000;
+  border-top: 2px solid #0d0950;
+  opacity: 0;
+  visibility: hidden; /* Mejor que max-height: 0 */
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-links a {
+  display: block;
+  text-align: center;
+  padding: 15px 0;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #0d0950;
+  border-bottom: 1px solid #f0f0f0;
+  width: 80%;
+}
+
+.nav-links a:hover {
+  background-color: transparent;
+  color: #ff9776;
+}
+
+.nav-links a:focus {
+  background-color: #ff9776;
+  color: white;
+}
+
+/* CUANDO EL MENÚ ESTÁ EXPANDIDO EN MÓVILES */
+.menu[aria-expanded="true"] + .nav-links,
+:has(.menu[aria-expanded="true"]) .nav-links {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ===== PANTALLAS GRANDES (636px o más) ===== */
+@media screen and (min-width: 636px) {
+  /* Ocultar botón menú en desktop */
+  .menu {
+    display: none !important;
+  }
+  
+  /* Mostrar navegación horizontal en desktop */
+  .nav-links {
+    position: static;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 5em;
+    width: auto;
+    background: none;
+    box-shadow: none;
+    border-top: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: none;
+  }
+  
+  .nav-links a {
+    display: inline-block;
+    padding: 15px 20px;
+    border-bottom: none;
+    font-size: 1.2rem;
+    width: auto;
+  }
+  
+  .nav-links a:hover {
+    background-color: transparent;
+    color: #ff9776;
+  }
+}
+
+/* ===== PANTALLAS PEQUEÑAS (635px o menos) ===== */
+@media screen and (max-width: 635px) {
+  /* Mostrar botón menú en móviles */
+  .menu {
+    display: block;
+  }
+  
+  /* Mejora visual del botón activo */
+  .menu[aria-expanded="true"] {
+    background-color: #ff9776;
+    color: #0d0950;
+  }
+}
