@@ -1,8 +1,22 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Página de inicio";
+import Saludos from "../components/Saludos.jsx";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
 	<h2>Mi página de inicio</h2>
+
+	<Saludos client:load mensajes={[
+		"Hej", 
+		"Hallo", 
+		"WEP!", 
+		"Habari",
+		"Buenas!",
+		"Cómo va?",
+		"Qué onda..",
+		"Hola hola",
+		"Bienvenido",
+		"Gracias por venir"
+		]} />
 </BaseLayout>
