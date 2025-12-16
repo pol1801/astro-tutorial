@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { slugify } from "../../tools/slugify";
 const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
 const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
 const pageTitle = "Índice de TAGS"
@@ -23,7 +24,9 @@ const pageTitle = "Índice de TAGS"
 <BaseLayout pageTitle={pageTitle}>
     <div class="tags">
         {tags.map((tag) => (
-            <h4 class="tag"><a href={`/tags/${tag}`}>{tag}</a></h4>
+            <h4 class="tag">
+                <a href={`/tags/${slugify(tag)}`}>{tag}</a>
+            </h4>
         ))}
     </div>    
 </BaseLayout>

@@ -1,6 +1,9 @@
 ---
 import BlogPost from "../../components/BlogPost.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { slugify } from "../../tools/slugify.js";
+
+
 
 export async function getStaticPaths() {
     const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
@@ -8,18 +11,18 @@ export async function getStaticPaths() {
     return uniqueTags.map((tag) => {
         const filteredPosts = allPosts.filter((post: any) => post.frontmatter.tags.includes(tag));
         return {
-            params: { tag },
-            props: { posts: filteredPosts },
+            params: { tag: slugify(tag) },
+            props: { posts: filteredPosts, originalTag: tag },
         };
     });
 }
 
 const { tag } = Astro.params;
-const { posts } = Astro.props;
+const { posts, originalTag } = Astro.props;
 ---
 
-<BaseLayout pageTitle={tag}>
-    <p>Posts etiquetadas con {tag}</p>
+<BaseLayout pageTitle={originalTag}>
+    <p>Posts etiquetadas con {originalTag}</p>
     <ul>
         {posts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title}/>)}
     </ul>
