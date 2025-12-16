@@ -7,7 +7,7 @@ author: 'Alumno de Astro'
 image:
     url: 'https://docs.astro.build/assets/rose.webp'
     alt: 'El logotipo de Astro sobre un fondo oscuro con un brillo rosado.'
-tags: ["astro", "bloguear", "aprender en público"]
+tags: ["astro", "bloguear", "aprender en publico"]
 ---
 <!-- # Mi primera publicación en el blog -->
 
