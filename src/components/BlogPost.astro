@@ -1,7 +1,9 @@
 ---
 const { title, url } = Astro.props;
+import '../styles/global.css';
+
 ---
-<style>
+<!-- <style>
     ul {
         list-style-type: none;
     }
@@ -18,5 +20,5 @@ const { title, url } = Astro.props;
     a:hover {
       background-color: burlywood;
     }
-</style>
-<li><a href={url}>{title}</a></li>
+</style> -->
+<li class="skill"><a href={url}>{title}</a></li>

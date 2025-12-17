@@ -7,6 +7,11 @@ html {
   font-family: sans-serif;
 }
 
+html.dark {
+  background-color:#29273f;
+  color: #f1f5f9;
+}
+
 body {
   margin: 0 auto;
   width: 100%;
@@ -18,7 +23,7 @@ body {
 
 h1 {
   margin: 1rem 0;
-  color: rgb(65, 60, 60);
+  color: dimgray;
   font-size: 2.5rem;
 }
 
@@ -28,6 +33,14 @@ h2 {
   font-size: 1.5rem;
 }
 
+.dark h1 {
+  color: blanchedalmond;
+}
+
+.dark h2 {
+  color: #f0f0f0;
+}
+
 .header {
   position: relative;
 }
@@ -35,7 +48,7 @@ h2 {
 
 /* ESTILOS BASE DEL BOTÓN (oculto por defecto) */
 .menu {
-  background-color: #363377;
+  background-color: darkslateblue;
   border: none;
   color: #fff;
   font-size: 1.2rem;
@@ -49,6 +62,20 @@ h2 {
   z-index: 1001;
 }
 
+.menu:hover {
+  background-color: darkolivegreen;
+}
+
+.dark .menu {
+  background-color: burlywood;
+  color: darkslateblue;
+}
+
+.dark .menu:hover {
+  background-color: darkolivegreen;
+  color: #fff;
+}
+
 /* NAVEGACIÓN EN MÓVILES (oculta por defecto) */
 .nav-links {
   width: 100%;
@@ -58,13 +85,13 @@ h2 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: white;
+  background-color: whitesmoke;
+  opacity: 0.75;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   display: flex; /* Usamos flex para centrar */
   flex-direction: column;
   align-items:center;
   z-index: 1000;
-  border-top: 2px solid #0d0950;
   opacity: 0;
   visibility: hidden; /* Mejor que max-height: 0 */
   transform: translateY(-20px);
@@ -79,19 +106,33 @@ h2 {
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: #0d0950;
+  color: darkslateblue;
   border-bottom: 1px solid #f0f0f0;
   width: 80%;
 }
 
 .nav-links a:hover {
-  background-color: transparent;
-  color: #ff9776;
+  color: burlywood;
 }
 
 .nav-links a:focus {
-  background-color: #ff9776;
+  background-color: burlywood;
   color: white;
+}
+
+.dark .nav-links a:hover,
+.dark .nav-links a:focus {
+  color: darkslateblue;
+}
+
+.dark .nav-links {
+  color: #fff;
+  background-color: whitesmoke;
+  opacity: 0.75;
+}
+
+.dark a {
+  color: burlywood;
 }
 
 /* CUANDO EL MENÚ ESTÁ EXPANDIDO EN MÓVILES */
@@ -137,7 +178,7 @@ h2 {
   
   .nav-links a:hover {
     background-color: transparent;
-    color: #ff9776;
+    color: burlywood;
   }
 }
 
@@ -150,7 +191,74 @@ h2 {
   
   /* Mejora visual del botón activo */
   .menu[aria-expanded="true"] {
-    background-color: #ff9776;
+    background-color: burlywood;
     color: #0d0950;
   }
+}
+
+.skill {
+      color: darkolivegreen;
+      font-weight: 600;
+      text-transform: "capitalize";
+      list-style-type: none;
+}
+
+.skill a {
+  color: darkolivegreen;
+  text-decoration: none;
+}
+
+.skill a:hover {
+  color: burlywood;
+}
+
+.dark .skill {
+  color: burlywood;
+}
+
+.dark .skill a {
+  color: burlywood;
+}
+
+.dark .skill a:hover {
+  color: darkolivegreen;
+}
+
+/* Estilos de Saludos Random */
+.saludo-container {
+    
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin: 20px 0px;
+    max-width: 500px;
+}
+
+.saludo-titulo {
+    color: brown;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.saludo-gracias {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.saludo-btn {
+    background-color: burlywood;
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.saludo-btn:hover {
+    background-color: darkolivegreen;
 }

@@ -1,4 +1,5 @@
 import { useState } from 'preact/hooks';
+import '../styles/global.css';
 
 export default function Saludos({mensajes}) {
 
@@ -7,10 +8,10 @@ export default function Saludos({mensajes}) {
   const [saludo, setSaludo] = useState(mensajes[0]);
 
   return (
-    <div>
-      <h3>{saludo}</h3>
-      <h4> ¡Gracias por tu visita!</h4>
-      <button onClick={() => setSaludo(randomMessage())}>
+    <div className="saludo-container">
+      <h3 className="saludo-titulo">{saludo}</h3>
+      <h4 className="saludo-gracias"> ¡Gracias por tu visita!</h4>
+      <button className="saludo-btn" onClick={() => setSaludo(randomMessage())}>
         Nuevo saludo
       </button>
     </div>

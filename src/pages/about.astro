@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import "../styles/global.css";
+
 const pageTitle = "Sobre mi";
 
 const identidad = {
@@ -20,13 +20,13 @@ const skills = [
 ];
 
 const feliz = true;
-const finalizado = false;
+const finalizado = true;
 const goles = 3;
 
 // Variables CSS
-const skillColor = "darkolivegreen";
+/* const skillColor = "darkolivegreen";
 const fontWeight = 600;
-const textCase = "capitalize";
+const textCase = "capitalize"; */
 ---
 
 
@@ -34,14 +34,14 @@ const textCase = "capitalize";
   <!-- Estilos CSS (comentario HTML que se renderiza en el DOM) -->
   {/* Estilos CSS (comentario JavaScript que NO se renderiza en el DOM) */}
   <meta charset="UTF-8">
-  <style define:vars={{ skillColor, fontWeight, textCase }}>
+  <!-- <style define:vars={{ skillColor, fontWeight, textCase }}>
     .skill {
       color: var(--skillColor);
       font-weight: var(--fontWeight);
       text-transform: var(--textCase);
       list-style-type: none;
     }
-  </style>
+  </style> -->
 </head>
 <BaseLayout pageTitle={pageTitle}>
   <h2>...y mi web Astro</h2>
@@ -69,11 +69,11 @@ const textCase = "capitalize";
     }
   </ul>
   <p>Mis habilidades son:</p>
-  <ul>
-    {skills.map((skill) => <li class="skill">{skill}</li>)}
+  <ul class="skill">
+    {skills.map((skill) => <li>{skill}</li>)}
   </ul>
   
-  {feliz && <p>¡Estoy feliz de aprender Astro!</p>}
+  {feliz && <p>¡Estoy contento de aprender Astro!</p>}
   
   {finalizado && <p>¡He terminado este tutorial!</p>}
   

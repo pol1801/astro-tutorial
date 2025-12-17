@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "Página de inicio";
+const pageTitle = "El blog de Astro-Pol";
 import Saludos from "../components/Saludos.jsx";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<h2>Mi página de inicio</h2>
+	<h2>Esta es mi página de inicio</h2>
 
 	<Saludos client:load mensajes={[
 		"Hej", 

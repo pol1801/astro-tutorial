@@ -4,6 +4,24 @@ import BaseLayout from './BaseLayout.astro';
 import { slugify } from "../tools/slugify";
 ---
 
+<style>
+    a {color: burlywood; text-decoration: none;}
+    a:hover {color: darkolivegreen}
+    .tags {
+        display: flex; 
+        flex-wrap: wrap;
+    }
+    .tag {
+        margin: 0.25em;
+        border: dotted 1px #a1a1a1;
+        border-radius: .5em;
+        padding: .5em 1em;
+        font-size: 0.75em;
+        background-color: #f8fcfd;
+    }
+
+</style>
+
 <BaseLayout pageTitle={frontmatter.title}>
     <p>Publicado el: {frontmatter.pubDate.toString().slice(0,10)}</p>
     <p><em>{frontmatter.description}</em></p>

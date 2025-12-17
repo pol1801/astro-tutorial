@@ -1,14 +1,27 @@
 ---
 import Menu from "./Menu.astro";
 import NavBar from "./NavBar.astro";
+import TemaIcon from "./TemaIcon.astro";
 ---
 
 <header>
     <nav>
-        <Menu />
-        <NavBar />
+        <div>
+            <Menu />
+            <NavBar />
+            <TemaIcon />
+        </div>
+        <div>
+        </div>
     </nav>
 </header>
+
+<style>
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
 
 <script>
 	import "../scripts/menu.js";
