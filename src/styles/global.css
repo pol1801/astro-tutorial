@@ -3,13 +3,13 @@
 }
 
 html {
-  background-color: #f1f5f9;
+  background-color: whitesmoke;
   font-family: sans-serif;
 }
 
 html.dark {
   background-color:#29273f;
-  color: #f1f5f9;
+  color: whitesmoke;
 }
 
 body {
@@ -38,7 +38,7 @@ h2 {
 }
 
 .dark h2 {
-  color: #f0f0f0;
+  color: whitesmoke;
 }
 
 .header {
@@ -48,9 +48,9 @@ h2 {
 
 /* ESTILOS BASE DEL BOTÓN (oculto por defecto) */
 .menu {
-  background-color: darkslateblue;
+  background-color: darkolivegreen;
   border: none;
-  color: #fff;
+  color: whitesmoke;
   font-size: 1.2rem;
   font-weight: bold;
   padding: 10px 15px;
@@ -63,36 +63,34 @@ h2 {
 }
 
 .menu:hover {
-  background-color: darkolivegreen;
+  background-color: darkslateblue;
 }
 
 .dark .menu {
-  background-color: burlywood;
-  color: darkslateblue;
+  background-color: darkolivegreen;
+  color: whitesmoke;
 }
 
 .dark .menu:hover {
-  background-color: darkolivegreen;
-  color: #fff;
+  background-color: burlywood;
+  color: whitesmoke;
 }
 
 /* NAVEGACIÓN EN MÓVILES (oculta por defecto) */
 .nav-links {
   width: 100%;
-  margin: 0;
+  margin: 10px;
   position:fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: whitesmoke;
-  opacity: 0.75;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   display: flex; /* Usamos flex para centrar */
   flex-direction: column;
   align-items:center;
   z-index: 1000;
-  opacity: 0;
   visibility: hidden; /* Mejor que max-height: 0 */
   transform: translateY(-20px);
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
@@ -120,20 +118,24 @@ h2 {
   color: white;
 }
 
-.dark .nav-links a:hover,
-.dark .nav-links a:focus {
-  color: darkslateblue;
+.dark .nav-links a {
+  color: whitesmoke;
 }
 
+
+.dark .nav-links a:hover,
+.dark .nav-links a:focus {
+  color: burlywood;
+  background-color: darkslateblue;
+}
+
+
 .dark .nav-links {
-  color: #fff;
-  background-color: whitesmoke;
+  color: whitesmoke;
+  background-color: #29273f;
   opacity: 0.75;
 }
 
-.dark a {
-  color: burlywood;
-}
 
 /* CUANDO EL MENÚ ESTÁ EXPANDIDO EN MÓVILES */
 .menu[aria-expanded="true"] + .nav-links,
